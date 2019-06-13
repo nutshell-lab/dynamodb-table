@@ -1,0 +1,80 @@
+{
+	"name": "@nutshelllab/dynamodb-table",
+	"version": "0.0.0",
+	"description": "Just sugar syntax over AWS DynamoDB",
+	"license": "MIT",
+	"repository": "https://github.com/nutshell-lab/dynamodb-table",
+	"author": {
+		"name": "Nutshell",
+		"email": "contact@nutshell-lab.com",
+		"url": "https://nutshell-lab.com"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"aws",
+		"dynamo",
+		"dynamodb",
+		"nodejs"
+	],
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"lint": "xo",
+		"test": "xo",
+		"build": "pack build",
+		"release": "np"
+	},
+	"dependencies": {
+		"aws-sdk": "^2.474.0",
+		"bluebird": "^3.5.5"
+	},
+	"devDependencies": {
+		"@pika/pack": "^0.3.7",
+		"@pika/plugin-build-node": "^0.4.0",
+		"@pika/plugin-build-types": "^0.4.0",
+		"@pika/plugin-copy-assets": "^0.4.0",
+		"@pika/plugin-standard-pkg": "^0.4.0",
+		"eslint-config-prettier-standard": "^2.0.0",
+		"eslint-config-standard": "^12.0.0",
+		"eslint-plugin-standard": "^4.0.0",
+		"np": "^5.0.3",
+		"xo": "^0.24.0"
+	},
+	"@pika/pack": {
+		"pipeline": [
+			[
+				"@pika/plugin-standard-pkg"
+			],
+			[
+				"@pika/plugin-build-node"
+			],
+			[
+				"@pika/plugin-build-types"
+			],
+			[
+				"@pika/plugin-copy-assets",
+				{
+					"files": [
+						"readme.md"
+					]
+				}
+			]
+		]
+	},
+	"np": {
+		"cleanup": false,
+		"contents": "pkg"
+	},
+	"xo": {
+		"env": "node",
+		"space": true,
+		"semicolon": false,
+		"extends": "prettier-standard",
+		"rules": {
+      "promise/prefer-await-to-then": false
+    }
+	}
+}
