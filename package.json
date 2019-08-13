@@ -65,10 +65,6 @@
 			]
 		]
 	},
-	"np": {
-		"cleanup": false,
-		"contents": "pkg"
-	},
 	"xo": {
 		"env": "node",
 		"space": true,
