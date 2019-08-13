@@ -1,7 +1,3 @@
-import AWS from 'aws-sdk'
-
-AWS.config.setPromisesDependency(require('bluebird'))
-
 export const query = client => table => async (options = {}) => {
   const repsonse = await client
     .query({ TableName: table, ...options })

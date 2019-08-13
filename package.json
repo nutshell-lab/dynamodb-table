@@ -30,8 +30,7 @@
 		"release": "np"
 	},
 	"dependencies": {
-		"aws-sdk": "^2.474.0",
-		"bluebird": "^3.5.5"
+		"aws-sdk": "^2.474.0"
 	},
 	"devDependencies": {
 		"@pika/pack": "^0.3.7",
@@ -76,7 +75,7 @@
 		"semicolon": false,
 		"extends": "prettier-standard",
 		"rules": {
-      "promise/prefer-await-to-then": false
-    }
+			"promise/prefer-await-to-then": false
+		}
 	}
 }
