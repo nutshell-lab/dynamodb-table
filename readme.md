@@ -22,10 +22,10 @@ import Table from '@nutshelllab/dynamodb-table'
 
 const usersStore = new Table('users')
 
-(async ({ id, ...props }) => {
+(async ({ id, ...data }) => {
   const users = await usersStore.put({
-    primary: { id },
-    props
+    key: { id },
+    data
   })
 })
 ```
@@ -37,10 +37,10 @@ import Table from '@nutshelllab/dynamodb-table'
 
 const postsStore = new Table('users_posts')
 
-(async ({ userId, id, ...props }) => {
+(async ({ userId, id, ...data }) => {
   const users = await usersStore.put({
-    primary: { userId, id },
-    props
+    key: { userId, id },
+    data
   })
 })
 ```

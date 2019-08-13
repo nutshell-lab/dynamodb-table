@@ -24,7 +24,9 @@
 	"scripts": {
 		"lint": "xo",
 		"test": "xo",
+		"prebuild": "yarn test",
 		"build": "pack build",
+		"prerelease": "yarn build",
 		"release": "np"
 	},
 	"dependencies": {
