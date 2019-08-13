@@ -23,7 +23,8 @@
 	},
 	"scripts": {
 		"lint": "xo",
-		"test": "xo",
+		"pretest": "yarn lint",
+		"test": "echo 'No tests defined'",
 		"prebuild": "yarn test",
 		"build": "yarn pack build",
 		"prerelease": "yarn build",
