@@ -25,9 +25,9 @@
 		"lint": "xo",
 		"test": "xo",
 		"prebuild": "yarn test",
-		"build": "pack build",
+		"build": "yarn pack build",
 		"prerelease": "yarn build",
-		"release": "np"
+		"release": "yarn np"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.474.0"
