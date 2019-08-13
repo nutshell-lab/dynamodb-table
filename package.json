@@ -26,19 +26,19 @@
 		"pretest": "yarn lint",
 		"test": "echo 'No tests defined'",
 		"prebuild": "yarn test",
-		"build": "yarn pack build",
-		"prerelease": "yarn build",
-		"release": "yarn np"
+		"build": "yarn pika build",
+		"version": "yarn build",
+		"release": "yarn pika publish"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.474.0"
 	},
 	"devDependencies": {
-		"@pika/pack": "^0.3.7",
-		"@pika/plugin-build-node": "^0.4.0",
-		"@pika/plugin-build-types": "^0.4.0",
-		"@pika/plugin-copy-assets": "^0.4.0",
-		"@pika/plugin-standard-pkg": "^0.4.0",
+		"@pika/pack": "^0.5.0",
+		"@pika/plugin-build-node": "^0.6.0",
+		"@pika/plugin-build-types": "^0.6.0",
+		"@pika/plugin-copy-assets": "^0.6.0",
+		"@pika/plugin-standard-pkg": "^0.6.0",
 		"eslint-config-prettier-standard": "^2.0.0",
 		"eslint-config-standard": "^12.0.0",
 		"eslint-plugin-standard": "^4.0.0",
