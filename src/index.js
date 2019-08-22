@@ -25,7 +25,6 @@ export const put = client => table => async (item, options = {}) => {
   return item
 }
 
-
 export const update = client => table => async (key, options = {}) => {
   const response = await client
     .update({
