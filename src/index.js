@@ -1,21 +1,21 @@
 export const query = client => table => async (options = {}) => {
-  const repsonse = await client
+  const response = await client
     .query({ TableName: table, ...options })
     .promise()
-  return repsonse.Item
+  return response.Item
 }
 
 export const get = client => table => async (key, options = {}) => {
-  const repsonse = await client
+  const response = await client
     .get({ TableName: table, Key: key, ...options })
     .promise()
-  return repsonse.Item
+  return response.Item
 }
 
 export const scan = client => table => async (options = {}, previous = []) => {
-  const repsonse = await client.scan({ TableName: table, ...options }).promise()
-  const items = [...previous, ...repsonse.Items]
-  const lastKey = repsonse.LastEvaluatedKey
+  const response = await client.scan({ TableName: table, ...options }).promise()
+  const items = [...previous, ...response.Items]
+  const lastKey = response.LastEvaluatedKey
   if (!lastKey) return items
   return scan({ ...options, ExclusiveStartKey: lastKey }, items)
 }
@@ -27,7 +27,7 @@ const put = client => table => async (item, options = {}) => {
 
 
 export const update = client => table => async (key, options = {}) => {
-  const repsonse = await client
+  const response = await client
     .update({
       TableName: table,
       Key: key,
@@ -35,11 +35,11 @@ export const update = client => table => async (key, options = {}) => {
       ...options
     })
     .promise()
-  return repsonse.Attributes
+  return response.Attributes
 }
 
 export const remove = client => table => async (key, options = {}) => {
-  const repsonse = await client
+  const response = await client
     .delete({
       TableName: table,
       Key: key,
@@ -47,5 +47,5 @@ export const remove = client => table => async (key, options = {}) => {
       ...options
     })
     .promise()
-  return repsonse.Attributes
+  return response.Attributes
 }
