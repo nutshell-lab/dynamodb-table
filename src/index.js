@@ -20,7 +20,7 @@ export const scan = client => table => async (options = {}, previous = []) => {
   return scan({ ...options, ExclusiveStartKey: lastKey }, items)
 }
 
-const put = client => table => async (item, options = {}) => {
+export const put = client => table => async (item, options = {}) => {
   await client.put({ TableName: table, Item: item, ...options }).promise()
   return item
 }
