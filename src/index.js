@@ -2,7 +2,7 @@ export const query = client => table => async (options = {}) => {
   const response = await client
     .query({ TableName: table, ...options })
     .promise()
-  return response.Item
+  return response.Items
 }
 
 export const get = client => table => async (key, options = {}) => {
