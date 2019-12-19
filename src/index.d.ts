@@ -29,10 +29,3 @@ declare function remove(client: DocumentClient)
   : (table: String)
   => (key: any, options?: DocumentClient.DeleteItemInput)
   => Promise<any>;
-
-exports.query = query;
-exports.get = get;
-exports.scan = scan;
-exports.put = put;
-exports.update = update;
-exports.remove = remove;
