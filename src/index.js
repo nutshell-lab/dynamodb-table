@@ -17,7 +17,7 @@ export const scan = client => table => async (options = {}, previous = []) => {
   const items = [...previous, ...response.Items]
   const lastKey = response.LastEvaluatedKey
   if (!lastKey) return items
-  return scan({ ...options, ExclusiveStartKey: lastKey }, items)
+  return scan(client)(table)({ ...options, ExclusiveStartKey: lastKey }, items)
 }
 
 export const put = client => table => async (item, options = {}) => {
